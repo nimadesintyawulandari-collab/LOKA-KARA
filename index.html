@@ -1,67 +1,222 @@
-const dataBanten = [
-  // Banten dari Dokumen Revisi Nitya Yadnya
-  {
-    nama: "Pengambian / Pengambean",
-    kategori: "Naimitika – Manusa Yadnya",
-    makna: "Melambangkan dada kiri/anggā yadnya, berkaitan dengan pengambilan atau penerimaan unsur/anugerah[cite: 2].",
-    bahan: "Aledan/taledan; beras; benang; uang; raka-raka; kojong; tumpeng; tulung; tipat pengambean; ulam sesuai pakem; sampian pengambean[cite: 2].",
-    gambar: "pengambian.jpg"
-  },
-  {
-    nama: "Sesayut",
-    kategori: "Naimitika – Manusa Yadnya",
-    makna: "Merupakan sarana permohonan/harapan tertentu dengan tujuan yang berbeda-beda mengikuti jenisnya[cite: 2].",
-    bahan: "Taled/tamas sesayut; sampian/jejaitan; beras atau nasi; kacang/saur; buah; pisang; jajan; tebu; bantal/tape sesuai jenis; kojong[cite: 2].",
-    gambar: "sesayut.jpg"
-  },
-  {
-    nama: "Dapetan",
-    kategori: "Naimitika – Manusa Yadnya",
-    makna: "Merupakan nyasa Karma Wasana, mengandung ajaran syukur dan tanggung jawab atas perbuatan[cite: 2].",
-    bahan: "Taledan/tamas; buah; pisang; kue/jajan; satu tumpeng putih; lauk secukupnya; penyeneng; sampyan jaet guak; canang sari[cite: 2].",
-    gambar: "dapetan.jpg"
-  },
-  {
-    nama: "Gebogan",
-    kategori: "Dewa Yadnya / Manusa Yadnya",
-    makna: "Melambangkan perkumpulan/penyatuan hasil karya sebagai wujud syukur dan bhakti[cite: 2].",
-    bahan: "Buah-buahan unsur Panca Rengga; jajan Begina dan Uli; sampian/canang Gebogan; bunga; alas/kerangka[cite: 2].",
-    gambar: "gebogan.jpg"
-  },
-  {
-    nama: "Peras",
-    kategori: "Naimitika – Manusa Yadnya",
-    makna: "Berkaitan dengan prasidha/sidhi, yaitu tercapainya keberhasilan[cite: 2].",
-    bahan: "Tamas/taledan/ceper; aled/kulit peras; beras; benang; base tampel/porosan; uang kepeng/recehan; buah; pisang; kue; dua tumpeng; rerasmen/lauk[cite: 2].",
-    gambar: "peras.jpg"
-  },
-  {
-    nama: "Canang Sari",
-    kategori: "Nitya Yadnya",
-    makna: "Sarana persembahan sehari-hari sebagai wujud bhakti dan rasa syukur kepada Ida Sang Hyang Widhi Wasa[cite: 2].",
-    bahan: "Ceper/tamas, janur atau jejahitan, porosan, bunga, dan unsur pelengkap sesuai pakem setempat[cite: 2].",
-    gambar: "canang_sari.jpg"
-  },
-  // Banten dari Dokumen Pelutuk Banten Hindu Lombok
-  {
-    nama: "Suci Ageng",
-    kategori: "Dewa Yadnya",
-    makna: "Banten suci yang ditanding pada sok suci biasa[cite: 3].",
-    bahan: "Panca Pala, Duma, Bayuan, Peras, Samuhan Guling, Guru, Saraswati, Sanganan Ayunan, Lampadan, Lingga, Guling Bebek, Kelungah, Daksina[cite: 3].",
-    gambar: "suci_ageng.jpg"
-  },
-  {
-    nama: "Byakala",
-    kategori: "Pabersihan",
-    makna: "Sebagai sarana pembersihan (pabersihan)[cite: 3].",
-    bahan: "Sidi, taledan berisi kulit peras pandan berduri, raka-raka, sampian nagasari, pesucian, lis amuan-amuan, nasi metajuh, nasi metimpuh, sabet serabut kelapa[cite: 3].",
-    gambar: "byakala.jpg"
-  },
-  {
-    nama: "Penglukatan",
-    kategori: "Pabersihan",
-    makna: "Sarana untuk memohon pembersihan ke hadapan Ida Sang Hyang Widhi Wasa[cite: 3].",
-    bahan: "Toya/sumber air, bunga 5 warna, daun dadap, daun kayu tulak, daun kemuning, daun suda mala, ambengan[cite: 3].",
-    gambar: "penglukatan.jpg"
-  }
-];
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOKAKARA - Edukasi Banten Bali</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --maroon-dark: #4A1717; --maroon: #641F24;
+            --brown-dark: #3B241C; --brown: #6B4636;
+            --gold: #C9A227; --gold-light: #E4C766;
+            --cream: #F7F0E2; --white: #FFFFFF;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--cream); color: #333; }
+        h1, h2, h3 { font-family: var(--font-heading); color: var(--maroon-dark); }
+        
+        /* Navbar */
+        nav { background: var(--maroon-dark); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; color: white; position: sticky; top: 0; z-index: 100;}
+        nav .logo { font-family: var(--font-heading); font-size: 1.8rem; color: var(--gold-light); font-weight: bold; cursor: pointer; }
+        nav ul { display: flex; gap: 2rem; list-style: none; }
+        nav ul li { cursor: pointer; transition: 0.3s; }
+        nav ul li:hover { color: var(--gold); }
+
+        /* General Buttons */
+        .btn-primary { background: var(--gold); color: var(--maroon-dark); padding: 0.7rem 1.5rem; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+        .btn-primary:hover { background: var(--gold-light); }
+        
+        /* Pages */
+        .page { display: none; padding: 3rem 5%; min-height: 80vh; }
+        .page.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Hero / Beranda */
+        .hero { text-align: center; padding: 4rem 1rem; background: var(--maroon); color: white; border-radius: 10px; margin-bottom: 2rem;}
+        .hero h1 { color: var(--gold-light); font-size: 2.5rem; margin-bottom: 1rem; }
+        
+        /* Ailoka Chat */
+        .chat-container { max-width: 600px; margin: auto; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .chat-box { height: 400px; overflow-y: auto; padding: 1rem; background: #fafafa; }
+        .chat-msg { margin-bottom: 1rem; padding: 1rem; border-radius: 8px; }
+        .msg-user { background: var(--cream); text-align: right; border-right: 4px solid var(--brown); }
+        .msg-ai { background: white; border-left: 4px solid var(--gold); border-bottom: 1px solid #eee;}
+        .chat-input { display: flex; border-top: 1px solid #ccc; }
+        .chat-input input { flex: 1; padding: 1rem; border: none; outline: none; }
+        .chat-input button { background: var(--maroon); color: white; border: none; padding: 1rem 2rem; cursor: pointer; }
+
+        /* Lokaria Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-bottom: 4px solid var(--maroon); }
+        .card h3 { margin-bottom: 0.5rem; }
+
+        /* Nankara Quiz */
+        .quiz-box { max-width: 600px; margin: auto; background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+        .quiz-btn { display: block; width: 100%; padding: 1rem; margin: 0.5rem 0; border: 2px solid var(--gold); background: white; cursor: pointer; border-radius: 5px; font-weight: bold;}
+        .quiz-btn:hover { background: var(--gold); color: var(--maroon-dark); }
+        
+        footer { text-align: center; padding: 2rem; background: var(--maroon-dark); color: white; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" onclick="switchPage('beranda')">LOKAKARA</div>
+        <ul>
+            <li onclick="switchPage('beranda')">Beranda</li>
+            <li onclick="switchPage('ailoka')">Ailoka (AI)</li>
+            <li onclick="switchPage('lokaria')">Lokaria (Materi)</li>
+            <li onclick="switchPage('nankara')">Nankara (Kuis)</li>
+        </ul>
+    </nav>
+
+    <!-- HALAMAN BERANDA -->
+    <div id="beranda" class="page active">
+        <div class="hero">
+            <h1>Selamat Datang di LOKAKARA</h1>
+            <p>Platform Edukasi Banten Bali Era Baru. Mari belajar makna, fungsi, dan tata cara upakara.</p>
+            <br>
+            <button class="btn-primary" onclick="switchPage('lokaria')">Mulai Belajar Sekarang</button>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>🤖 Ailoka</h3>
+                <p>Tanya jawab langsung dengan AI Tutor seputar banten.</p>
+                <button class="btn-primary" style="margin-top: 1rem;" onclick="switchPage('ailoka')">Buka Ailoka</button>
+            </div>
+            <div class="card">
+                <h3>📖 Lokaria</h3>
+                <p>Ensiklopedia lengkap susunan dan makna banten.</p>
+                <button class="btn-primary" style="margin-top: 1rem;" onclick="switchPage('lokaria')">Buka Lokaria</button>
+            </div>
+            <div class="card">
+                <h3>🎯 Nankara</h3>
+                <p>Uji pemahaman Anda dengan kuis interaktif.</p>
+                <button class="btn-primary" style="margin-top: 1rem;" onclick="switchPage('nankara')">Mulai Kuis</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HALAMAN AILOKA (CHAT) -->
+    <div id="ailoka" class="page">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Ailoka - AI Tutor Banten</h2>
+        <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+                <div class="chat-msg msg-ai"><strong>Ailoka:</strong> Om Swastyastu! Ada yang ingin Anda tanyakan mengenai banten Bali hari ini?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Ketik pertanyaan Anda tentang banten...">
+                <button onclick="sendChat()">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HALAMAN LOKARIA (MATERI) -->
+    <div id="lokaria" class="page">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Lokaria - Ensiklopedia Banten</h2>
+        <div class="grid" id="materi-grid">
+            <!-- Diisi oleh JavaScript -->
+        </div>
+    </div>
+
+    <!-- HALAMAN NANKARA (KUIS) -->
+    <div id="nankara" class="page">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Nankara - Uji Pemahaman</h2>
+        <div class="quiz-box" id="quiz-box">
+            <!-- Diisi oleh JavaScript -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 LOKAKARA - Edukasi Banten Bali</p>
+    </footer>
+
+    <script>
+        // --- NAVIGASI SPA ---
+        function switchPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // --- DATA BANTEN ---
+        const bantenData = [
+            { nama: "Banten Pengambean", fungsi: "Sarana pelengkap ayaban dan ungkapan bhakti.", bahan: "Aledan, Beras, Benang, Tumpeng 2 buah." },
+            { nama: "Banten Peras", fungsi: "Memohon agar kegiatan yadnya berhasil (prasidha).", bahan: "Tamas, Kulit Peras, Base Tampel, Tumpeng 2 buah." },
+            { nama: "Banten Dapetan", fungsi: "Sebagai nyasa Karma Wasana (pengalaman hasil karma).", bahan: "Tamas, Tumpeng, Raka-raka, Rerasmen." }
+        ];
+
+        function renderLokaria() {
+            const grid = document.getElementById('materi-grid');
+            bantenData.forEach(b => {
+                grid.innerHTML += `
+                    <div class="card">
+                        <h3>${b.nama}</h3>
+                        <p><strong>Fungsi:</strong> ${b.fungsi}</p>
+                        <p><strong>Bahan:</strong> ${b.bahan}</p>
+                    </div>
+                `;
+            });
+        }
+        renderLokaria();
+
+        // --- SISTEM AILOKA (CHAT DEMO) ---
+        function sendChat() {
+            const input = document.getElementById('chat-input');
+            const chatBox = document.getElementById('chat-box');
+            const msg = input.value.trim();
+            
+            if(!msg) return;
+
+            chatBox.innerHTML += `<div class="chat-msg msg-user"><strong>Anda:</strong> ${msg}</div>`;
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                let balas = "Maaf, Ailoka masih dalam mode Demo. Coba tanyakan tentang 'Peras' atau 'Pengambean'.";
+                if(msg.toLowerCase().includes('peras')) balas = "Banten Peras digunakan untuk memohon keberhasilan (prasidha). Bahan utamanya meliputi kulit peras, beras, benang, dan dua buah tumpeng.";
+                if(msg.toLowerCase().includes('pengambean')) balas = "Banten Pengambean melambangkan dada kiri/anggā yadnya, berfungsi sebagai pelengkap ayaban.";
+                
+                chatBox.innerHTML += `<div class="chat-msg msg-ai"><strong>Ailoka:</strong> ${balas}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000);
+        }
+
+        // --- SISTEM NANKARA (KUIS) ---
+        const soal = [
+            { t: "Apa makna utama dari Banten Peras?", o: ["Kesedihan", "Keberhasilan (Prasidha)", "Penyucian"], a: "Keberhasilan (Prasidha)" },
+            { t: "Berapa jumlah tumpeng pada Banten Peras?", o: ["Satu", "Dua", "Tiga"], a: "Dua" }
+        ];
+        let indexSoal = 0;
+
+        function loadKuis() {
+            const qBox = document.getElementById('quiz-box');
+            if(indexSoal >= soal.length) {
+                qBox.innerHTML = `<h3>Kuis Selesai! 🎉</h3><br><button class="btn-primary" onclick="switchPage('beranda'); indexSoal=0; loadKuis();">Kembali ke Beranda</button>`;
+                return;
+            }
+            const s = soal[indexSoal];
+            let html = `<h3>Soal ${indexSoal + 1}</h3><p style="margin: 1rem 0;">${s.t}</p>`;
+            s.o.forEach(opt => {
+                html += `<button class="quiz-btn" onclick="cekJawaban('${opt}', '${s.a}')">${opt}</button>`;
+            });
+            qBox.innerHTML = html;
+        }
+
+        function cekJawaban(jawab, benar) {
+            const qBox = document.getElementById('quiz-box');
+            const isCorrect = jawab === benar;
+            qBox.innerHTML = `
+                <h3 style="color: ${isCorrect ? 'green' : 'red'};">${isCorrect ? 'Benar!' : 'Salah!'}</h3>
+                <p>Jawaban yang tepat adalah: <strong>${benar}</strong></p>
+                <br><button class="btn-primary" onclick="indexSoal++; loadKuis();">Lanjut</button>
+            `;
+        }
+        loadKuis();
+    </script>
+</body>
+</html>
